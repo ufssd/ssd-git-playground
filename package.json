@@ -1,0 +1,9 @@
+{
+  "name": "git-workshop-starter",
+  "version": "1.0.0",
+  "description": "Starter repo for a Git and GitHub workflow workshop",
+  "scripts": {
+    "test": "node test/workshop.test.js"
+  },
+  "license": "MIT"
+}

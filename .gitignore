@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.local
+secrets.json
+**/secrets.json
+dist/
+build/
+.vscode/
+.idea/
+.DS_Store
