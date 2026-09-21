@@ -1,76 +1,119 @@
-# Git Workshop Starter
+<div align="center">
+
+# 🌯 Git & GitHub Bowl Builder
+
+**A hands-on starter repo for practicing the real GitHub team workflow — themed like a Chipotle bowl order.**
+
+[![CI Check](https://github.com/Steven-Baez/ssd-git-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/Steven-Baez/ssd-git-playground/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+</div>
+
+---
+
+## 📖 About
 
 This is the starter project for the **Git & GitHub Hands-on Team Workflow Workshop**.
 
-The repo is intentionally simple and intentionally broken. The goal is not to build a real app. The goal is to practice the GitHub workflow:
+The repo is intentionally simple **and intentionally broken**. The goal isn't to build a real app — it's to practice the full GitHub workflow:
+
+<div align="center">
 
 **Issue → Branch → Commit → Push → Pull Request → Review → CI Check → Merge Decision**
 
-## Project contents
+</div>
+
+---
+
+## 📁 Project contents
 
 ```text
 git-workshop-starter-repo/
-  src/
-    workshop.js
-    title.js
-  test/
-    workshop.test.js
-  .github/
-    workflows/ci.yml
-    pull_request_template.md
+├── src/
+│   ├── workshop.py
+│   └── title.py
+├── test/
+│   └── test_workshop.py
+└── .github/
+    ├── workflows/ci.yml
+    └── pull_request_template.md
 ```
 
-## Current state
+---
 
-The CI check is supposed to fail at first.
+## 🚦 Current state
 
-That is intentional.
+> [!NOTE]
+> The CI check is **supposed to fail** at first. That's intentional!
 
 Your job during the workshop is to:
 
-1. Read the issue assigned to you.
-2. Create a branch for the issue.
-3. Make a small fix.
-4. Run the test locally.
-5. Commit with a clear message.
-6. Push your branch.
-7. Open a pull request.
-8. Request a review.
-9. Check whether GitHub Actions turns green.
+1. ✅ Read the issue assigned to you.
+2. 🌿 Create a branch for the issue.
+3. 🛠️ Fix the bowl status bug.
+4. 🌶️ Add your own item to the menu (e.g. *Danny's Oreo Ice Cream*).
+5. 🧪 Run the test locally.
+6. 📝 Commit with a clear message.
+7. ⬆️ Push your branch.
+8. 🔀 Open a pull request.
+9. 👀 Request a review.
+10. 🟢 Check whether GitHub Actions turns green.
 
-## Running the test
+---
 
-This project has no outside dependencies.
+## ▶️ Running the tests
 
-Run:
+This project has **no outside dependencies** — just Python 3.
 
 ```bash
-npm test
+python test/test_workshop.py
 ```
 
 At first, the test should fail with a message like:
 
 ```text
-FAIL: Workshop status should be ready
+FAIL: Bowl status should be ready
 Expected: ready
 Received: not ready
 ```
 
-After the correct one-line fix, the test should pass.
+After the correct one-line fix, the test should pass:
 
-## Main workshop issue
+```text
+All checks passed.
+```
+
+---
+
+## 🐞 Main workshop issue
 
 The main bug is in:
 
 ```text
-src/workshop.js
+src/workshop.py
 ```
 
-The function `getWorkshopStatus()` currently returns the wrong status.
+The function `get_bowl_status()` currently returns the wrong status.
 
-Do not fix it directly on `main`. Create a branch first.
+> [!WARNING]
+> Do not fix it directly on `main`. Create a branch first!
 
-## Branch naming examples
+---
+
+## 🌮 Add your own menu item
+
+`src/workshop.py` also has a `MENU` dict with `base`, `protein`, and `toppings` lists. While you're on your branch, add one item of your own to `MENU["toppings"]` — make it yours, like:
+
+```python
+"toppings": ["salsa", "cheese", "guac", "sour cream", "Danny's Oreo Ice Cream"],
+```
+
+Your PR should include **both** the bug fix and your new menu item.
+
+---
+
+## 🌿 Branch naming examples
 
 Use the pattern:
 
@@ -78,18 +121,22 @@ Use the pattern:
 type/short-description
 ```
 
-Examples:
+| Example | Use case |
+|---|---|
+| `fix/bowl-status` | Bug fixes |
+| `docs/readme-setup` | Documentation changes |
+| `feat/update-title` | New features |
+| `chore/repo-cleanup` | Maintenance tasks |
 
-```text
-fix/workshop-status
-docs/readme-setup
-feat/update-title
-chore/repo-cleanup
-```
+---
 
-## Commit message examples
+## 📝 Commit message examples
 
-Bad:
+<table>
+<tr>
+<td valign="top">
+
+**❌ Bad**
 
 ```text
 fix
@@ -98,23 +145,41 @@ changes
 final
 ```
 
-Better:
+</td>
+<td valign="top">
+
+**✅ Better**
 
 ```text
-fix: correct workshop status check
+fix: correct bowl status check
+feat: add Danny's Oreo Ice Cream topping
 docs: add setup instructions
-feat: update workshop title
 chore: clean unused files
 ```
 
-## Pull request rules
+</td>
+</tr>
+</table>
+
+---
+
+## 🔀 Pull request rules
 
 A PR should include:
 
-- what changed
-- why it changed
-- how you tested it
-- linked issue using `Closes #X`
-- passing GitHub Actions check
+- [x] What changed
+- [x] Why it changed
+- [x] How you tested it
+- [x] Linked issue using `Closes #X`
+- [x] Passing GitHub Actions check
 
-Do not merge until another person reviews it.
+> [!IMPORTANT]
+> Do not merge until another person reviews it.
+
+---
+
+<div align="center">
+
+Made with ❤️ for the workshop.
+
+</div>
